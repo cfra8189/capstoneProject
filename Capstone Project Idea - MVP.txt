@@ -1,0 +1,97 @@
+Capstone Project Idea - MVP
+
+Application Name: L|A|Z - The Liaison (Link)
+
+Request App - Communication - Healthcare - Nurses to Nutrition Food Services
+
+***v1 - 
+
+- The nurse needs a tray for a transfer patient. 
+- The patient did not get their tray from the last room and they don't like their default supplement.
+	- Current Supplement: Chocolate Ensure Max.
+	- Preferred Supplement: Strawberry Ensure Max || Vanilla Ensure Max
+- It is dinner time and the patient will also like to place their breakfast order.
+
+***Application Simulation***
+
+There is an input field to find the patient.
+	- Use First and Last Name
+	- Room #
+	- MRN
+
+- [Find Patient]
+- [John Doe | #G100-2 | 123456789]
+
+interface Patient {
+    name: string;
+    dob: Date;
+    unit: string;
+    bedNumber: number;
+    roomNumber: number;
+    dietOrder: string;
+    allergies: string[];
+    supplements: string[];
+    dietician: string;
+    physician: string;
+    nurse: string;
+    carepartner: string;
+    admissionDate: Date;
+    lastTicketPrinted: Date;
+    onInsulin: boolean;
+    riskOfViolenceLevel: number;
+}   
+
+
+Option Selections:
+- Request Tray
+- Request Supplement
+- Request Supplement Change
+- Report Missing Tray/Items
+- Request Liaison
+
+Each selections has its own form.
+Once the form is filled out it, the user saves it and they brought back to the selection window in the patient's file to fill out any needed requests to be submitted together.
+
+The process to satisfy the patient:
+- Requesting a tray:
+	- The patient's diet information is already in there.
+	- The healthcare professional can make edits to the diet. (Supplements have to be approved by the Dietitian.
+	- Once the diet information is approved and saved, a basic meal order for their diet will be made and the user will be brought back to the selection window/page.
+	- The Tray Request will have a check to show that it is ready to be submitted.
+
+- Requesting a Supplement Change:
+	- Supplement changes have to be approved by the Dietitian.
+	- The user sees a list of supplements that can be changed.
+	- The patient does not like the Chocolate Ensure Max and prefers the Vanilla Ensure Max.
+	- The user selects the supplement that need to be changed/removed, selects the 	supplement that is preferred, and saves it.
+	- This will not be automated because the Dietitian has to analyze the patient's chart.
+	- When the submission is made, the Dietitian will receive an email of the request with the patient information for approval.
+
+- Requesting a Liaison:
+	- There is a liaison button.
+	- The liaison window shows their information:
+		- Employee Picture
+		- Name
+		- Employee ID
+		- Number
+		- Assigned Units
+		- On Break
+	- There is a dropdown menu selector
+		- Menu Options
+		- Add Tray Request to notify them of the ordered tray
+		- Other(which will need to be explained in the provided text area.
+	- The text area is used for custom messages to the liaison.
+	- Once the form is filled and saved, the user will be directed by to the selection window/page
+
+Submitting the order:
+	- Once all of the desired requests have been created and are checked, the user can click the submit button.
+	- When the button is clicked, it generates a document of the request that can be printed.
+	- The information is automatically added to a spreadsheet and starts an internal timer. 
+	- This will also trigger a display timer on the main screen, showing current orders with the patients who are waiting for completed requests.
+	
+Completed Requests:
+	- When an order has been completed fully, "Complete" will be in the place of the timer.
+	- If there is a request that needs to be approved to be completed, the timer will continue to run until it's approved.
+	- If it is a part of an order that is partially completed, it will display "Complete" next to the completed request while the timer still continues with a message that says "Upon Approval".
+	
+
